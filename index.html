@@ -1,0 +1,48 @@
+<html>
+<body>
+
+<h2>Employee Form</h2>
+
+ID: <input id="id"><br><br>
+Name: <input id="name"><br><br>
+Role: <input id="role"><br><br>
+Salary: <input id="salary"><br><br>
+
+<button onclick="addEmployee()">Add Employee</button>
+
+<h2>Employee Table</h2>
+
+<table border="1">
+<tr>
+<th>ID</th>
+<th>Name</th>
+<th>Role</th>
+<th>Salary</th>
+</tr>
+
+<tbody id="data"></tbody>
+</table>
+
+<script>
+function addEmployee()
+{
+    var id = document.getElementById("id").value;
+    var name = document.getElementById("name").value;
+    var role = document.getElementById("role").value;
+    var salary = document.getElementById("salary").value;
+
+    var row = "<tr><td>" + id + "</td><td>" +
+    name + "</td><td>" + role + "</td><td>" +
+    salary + "</td></tr>";
+
+    document.getElementById("data").innerHTML += row;
+
+    document.getElementById("id").value = "";
+    document.getElementById("name").value = "";
+    document.getElementById("role").value = "";
+    document.getElementById("salary").value = "";
+}
+</script>
+
+</body>
+</html>
